@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>realJaden</title>
+    </head>
+        <style>
+            body {
+                background: black;
+                color: blue;
+                padding: 10px;
+                font-family: monospace;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+
+            /* navigation menu */
+            nav {
+                background: blueviolet;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                display: flex;
+                padding: 10px;
+            }
+            h1 {
+                display: flex;
+                align-items: center;
+                color: rgb(219, 2, 2);
+                flex: 1;
+                margin: 0;
+            }
+            #nav-ul {
+                list-style-image: none;
+            }
+            .nav-li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            a {
+                text-decoration: rgb(219,0,0);
+                color: rgb(219,0,0);
+            }
+
+            /* main container area beneath menu */
+            main {
+                background: blue;
+                display: flex;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar-img {
+                width: 200px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            #interests {
+                border: 4px blueviolet ridge;
+                padding: 8px;
+            }
+            h2, h3 {
+                margin: 0px;
+            }
+        </style>
+    <body>
+        <!-- all content -->
+        <div id="all-contents">
+            
+            <nav>
+                <h1>realJaden</h1>
+                <ul id="nav-ul" >
+                    <li class="nav-li">
+                     <a href="index.html"> Home </a>
+                    </li>
+                    <li class="nav-li">
+                     <a href="portfolio.html"> Portfolio </a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <main>
+                <!-- Sidebar section -->
+                <div class="sidebar">
+                    <img class="sidebar-img"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeJUUaIbznznlKW1O0EuKyDGIgSlkqvNRUCg&usqp=CAU>
+                </div>
+
+                <!-- Content section -->
+                <div class="content">
+                    <h2>Jaden</h2>
+                     <p>Student at Northshore High School</p>
+                     <!-- Interests section -->
+                     <div id="interests"> 
+                        <h3>Interests</h3>
+                        <ul>
+                            <li>business</li>
+                            <li>bodybuilding</li>
+                            <li>cars</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
