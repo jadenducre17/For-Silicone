@@ -11,7 +11,7 @@
     opspark.createPlayer = function (game) {
         let 
             asset = init(game),
-            _direction = 1,
+            _direction = 2,
             _run = createState('run'),
             _duck = createDuckState('duck'),
             _idle = createState('idle'),
@@ -122,8 +122,8 @@
         
         function createFlyingJumpState(name) {
             let 
-                xOffset = 17,
-                yOffset = 9,
+                xOffset = 10,
+                yOffset = 25,
                 state = createState(name);
                 state.fire = state.duck = state.idle = state.walk = state.run = 
                 state.stop = state.duck = state.jump = state.flyingJump = doNothing;

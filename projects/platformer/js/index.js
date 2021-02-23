@@ -5,7 +5,7 @@ $(document).ready(function () {
     let 
         opspark = window.opspark,
         game = opspark.createGame(create, update),
-        lives = 3;
+        lives = 250;
         
     function create() {
         game.opspark.init();
@@ -21,9 +21,9 @@ $(document).ready(function () {
         
         opspark.player.init(game);
         
-        const textOpts = { fontSize: '32px', fill: '#000' };
-        game.score = game.add.text(16, 16, 'Score: 0', textOpts);
-        game.lives = game.add.text(16, 70, 'Lives: ' + lives, textOpts);
+        const textOpts = { fontSize: '100px', fill: '#000' };
+        game.score = game.add.text(16, 16, 'SCORE: 0', textOpts);
+        game.lives = game.add.text(16, 150, 'LIVES: ' + lives, textOpts);
     }
 
 
@@ -52,14 +52,14 @@ $(document).ready(function () {
     function decrementLives(){
         if(lives !== 0){
             lives--;
-            game.lives.text = 'Lives ' + lives;            
+            game.lives.text = 'LIVES ' + lives;            
         } else {
-            setTimeout(() => game.lives.text = "Game Over: Refresh Your Browser to Play Again", 500);
+            setTimeout(() => game.lives.text = "you lose lol", 500);
         } 
     }
 
     function collectDb(player, collectable) {
-        game.score.text = 'Score: ' + (parseInt(/\s+(\S*)$/.exec(game.score.text)[1], 10) + collectable.type.points);
+        game.score.text = 'SCORE: ' + (parseInt(/\s+(\S*)$/.exec(game.score.text)[1], 10) + collectable.type.points);
         collectable.kill();
     }
 
