@@ -37,16 +37,18 @@
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
-			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			// Every 10 milliseconds, call the update Function (see below)
+			setInterval(update, 10);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
-			}
+			
+			function moveBoxTo(PositionX, PositionY) {
+                box.css("left", PositionX);
+                box.css("top", PositionY);
+            }
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -58,7 +60,14 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+            
+            var positionX = 150;
+            var positionY = 300;
+            var points = 0;
+            var speedX = 5;
+            var speedY = 5;
+            var randNumX = math.random() * 1300;
+            var randNumY = math.random() * 600;
 
 			
 			/* 
@@ -67,7 +76,23 @@
 			turn it around! 
 			*/
 			function update() {
-				
+            positionX = positionX + speedX;
+            positionY = positionY + speedY;
+            moveBoxTo(positionX, positionY);
+
+            if (positionX > 1300) {
+                speedX = speedX * -1;
+            
+            }
+            if (positionX < 0) {
+                speedX = speedX * -1
+            }
+            if (positionY > 600) {
+                speedY = speedY * -1
+            }
+            if (positionY < 0) {
+                speedY = speedY * -1
+            }
 
 			};
 
@@ -77,6 +102,16 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
+                positionX = 600;
+                positionY = 300;
+                points++;
+                speedX = speedX + 2.5;
+                speedY = speedY + 2.5;
+                
+
+
+              
+                changeBoxText(points);
 				
 
 
